@@ -1,65 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# RickAnd Morty (API)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Steps
 
-## About Laravel
+### Download the project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+git clone https://github.com/santi280403/RickAndMortyServer.git
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Navigate to the project
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```
+cd RickAndMortyServer
+```
 
-## Learning Laravel
+### Install dependencies
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+composer install
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Copy the .env.example
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+cp .env.example .env
+```
 
-## Laravel Sponsors
+### Generate keys
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+php artisan key:generate
+```
 
-### Premium Partners
+### Migrate Database
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```
+php artisan migrate
+```
 
-## Contributing
+### Run the project
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+php artisan serv
+```
 
-## Code of Conduct
+## Routes
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Characters
 
-## Security Vulnerabilities
+-   **(GET)** get characters **api/characters**
+-   **(GET)** paginate characters **api/characters?page=1**
+-   **(GET)** search characters **api/characters?search=rick**
+-   **(GET)** paginate an search characters **api/characters?page=1&search=rick**
+-   **(POST)** create characters **api/characters**
+-   **(PUT)** update characters **api/characters/{idCharacter}**
+-   **(DELETE)** update characters **api/characters/{idCharacter}**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Locations
+
+-   **(GET)** get locations **api/locations**
+-   **(GET)** paginate locations **api/locations?page=1**
+-   **(GET)** search locations **api/locations?search=earth**
+-   **(GET)** paginate an search locations **api/locations?page=1&search=earth**
+-   **(POST)** create locations **api/locations**
+-   **(PUT)** update locations **api/locations/{idLocation}**
+-   **(DELETE)** update locations **api/locations/{idLocation}**
+
+### Episodes
+
+-   **(GET)** get episodes **api/episodes**
+-   **(GET)** paginate episodes **api/episodes?page=1**
+-   **(GET)** search episodes **api/episodes?search=pilot**
+-   **(GET)** paginate an search episodes **api/episodes?page=1&search=pilot**
+-   **(POST)** create episodes **api/episodes**
+-   **(PUT)** update episodes **api/episodes/{iEpisode}**
+-   **(DELETE)** update episodes **api/episodes/{idEpisode}**
 
 ## License
 
