@@ -57,7 +57,7 @@ class Locations extends Controller
 
     public function update(Request $request, ModelsLocations $location)
     {
-        $location = new ModelsLocations([
+        $location->update([
             'name' => $request->input('name'),
             'type' => $request->input('type'),
             'dimension' => $request->input('dimension'),
